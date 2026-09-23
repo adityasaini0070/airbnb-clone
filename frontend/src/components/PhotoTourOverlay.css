@@ -1,0 +1,43 @@
+.tour { position: fixed; inset: 0; z-index: 100; background: #fff; animation: fadeIn 0.2s ease; height: 100%; display: flex; flex-direction: column; }
+
+.tour__topbar {
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border-light);
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+}
+
+.tour__close { width: 40px; height: 40px; border-radius: 50%; border: none; background: transparent; display: flex; align-items: center; justify-content: center; }
+.tour__close:hover { background: #F7F7F7; }
+
+.tour__title { flex: 1; text-align: center; font-weight: 600; color: var(--color-primary); }
+.tour__spacer { width: 40px; }
+
+.tour__thumbnails { display: flex; gap: 16px; overflow-x: auto; padding: 24px 5%; flex-wrap: wrap; border-bottom: 1px solid var(--color-border-light); }
+
+.tour__thumb { border: none; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px; flex-shrink: 0; }
+.tour__thumb img { width: 96px; height: 72px; object-fit: cover; border-radius: 8px; transition: outline 0.15s ease; }
+.tour__thumb:hover img { outline: 2px solid var(--color-text); }
+.tour__thumb span { font-size: 12px; color: var(--color-primary); text-decoration: underline; text-align: center; }
+
+.tour__body { flex: 1; overflow-y: auto; padding: 40px 5% 80px; display: flex; flex-direction: column; gap: 64px; max-width: 1400px; margin: 0 auto; width: 100%; }
+
+.tour__category { display: grid; grid-template-columns: 300px 1fr; gap: 48px; }
+@media (max-width: 900px) { .tour__category { grid-template-columns: 1fr; gap: 16px; } }
+
+.tour__category-header h2 { font-size: 24px; margin: 0 0 8px; }
+.tour__category-header p { font-size: 14px; color: var(--color-text-secondary); margin: 0; }
+
+.tour__category-photos { display: flex; flex-direction: column; gap: 8px; }
+
+.tour__photo { width: 100%; border-radius: 12px; object-fit: cover; }
+.tour__photo--full { max-height: 520px; }
+
+.tour__photo-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.tour__photo-pair img { height: 260px; }

@@ -1,0 +1,58 @@
+.navbar { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid var(--color-border-light); }
+
+.navbar__inner {
+  max-width: 1760px;
+  margin: 0 auto;
+  height: var(--nav-height);
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+@media (max-width: 900px) { .navbar__inner { padding: 0 24px; height: 64px; } }
+
+.navbar__logo { display: flex; align-items: center; gap: 8px; color: var(--color-primary); font-weight: 800; font-size: 22px; flex-shrink: 0; }
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 8px 8px 8px 24px;
+  gap: 8px;
+  transition: box-shadow 0.2s ease;
+}
+.navbar__search:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.16); }
+@media (max-width: 900px) { .navbar__search { display: none; } }
+
+.navbar__search-item { font-size: 14px; font-weight: 600; padding: 0 12px; white-space: nowrap; }
+.navbar__search-item--muted { color: var(--color-text-secondary); font-weight: 400; }
+.navbar__divider { width: 1px; height: 24px; background: var(--color-border); }
+
+.navbar__search-icon {
+  background: var(--color-primary);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+.navbar__host-link { font-size: 14px; font-weight: 600; padding: 12px; border-radius: 22px; }
+.navbar__host-link:hover { background: #F7F7F7; }
+@media (max-width: 700px) { .navbar__host-link { display: none; } }
+
+.navbar__icon-btn { border: none; background: transparent; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.navbar__icon-btn:hover { background: #F7F7F7; }
+
+.navbar__menu-btn { display: flex; align-items: center; gap: 12px; border: 1px solid var(--color-border); border-radius: 21px; padding: 5px 6px 5px 12px; background: #fff; }
+.navbar__menu-btn:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.16); }
+
+.navbar__avatar { width: 30px; height: 30px; border-radius: 50%; background: #717171; display: block; }

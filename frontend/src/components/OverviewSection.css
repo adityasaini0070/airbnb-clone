@@ -1,0 +1,38 @@
+.overview__type-row h2 { font-size: 22px; margin: 0 0 4px; font-weight: 600; }
+.overview__type-row p { margin: 0; color: var(--color-text-secondary); font-size: 15px; }
+
+.overview__favourite-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+
+.overview__favourite-icon { color: var(--color-text); flex-shrink: 0; }
+
+.overview__favourite-text { flex: 1; display: flex; flex-direction: column; font-size: 13px; }
+.overview__favourite-text strong { font-size: 14px; margin-bottom: 2px; }
+.overview__favourite-text span { color: var(--color-text-secondary); }
+
+.overview__favourite-score, .overview__favourite-reviews { display: flex; flex-direction: column; align-items: center; font-size: 12px; }
+.overview__favourite-score strong, .overview__favourite-reviews strong { font-size: 16px; }
+.overview__stars { font-size: 10px; letter-spacing: 1px; }
+
+.overview__host-row { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+.overview__host-row p { margin: 2px 0 0; color: var(--color-text-secondary); font-size: 14px; }
+.overview__host-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+
+.overview__highlights { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
+.overview__highlights li { display: flex; gap: 16px; align-items: flex-start; }
+.overview__highlights strong { font-size: 15px; font-weight: 600; }
+.overview__highlights p { margin: 4px 0 0; color: var(--color-text-secondary); font-size: 14px; }
+
+.overview__translation { background: #F7F7F7; border-radius: var(--radius-md); padding: 16px; font-size: 14px; margin-bottom: 16px; }
+
+.overview__description { font-size: 16px; line-height: 1.6; white-space: pre-line; }
+.overview__description--collapsed { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.overview__toggle { background: none; border: none; padding: 12px 0 0; font-size: 15px; }

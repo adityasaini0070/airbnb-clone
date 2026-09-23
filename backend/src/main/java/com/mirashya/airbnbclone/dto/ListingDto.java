@@ -1,0 +1,44 @@
+package com.mirashya.airbnbclone.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
+public record ListingDto(
+        String id,
+        String title,
+        String propertyType,
+        String location,
+        int guests,
+        int bedrooms,
+        int beds,
+        int bathrooms,
+        List<String> heroPhotos,
+        List<PhotoCategoryDto> photoCategories,
+        boolean guestFavourite,
+        double rating,
+        int reviewCount,
+        HostDto host,
+        List<CoHostDto> coHosts,
+        List<AmenityHighlightDto> amenityHighlights,
+        String description,
+        List<SleepAreaDto> sleepAreas,
+        List<AmenityDto> amenities,
+        int totalAmenityCount,
+        BigDecimal pricePerStay,
+        String currency,
+        int nights,
+        LocalDate checkIn,
+        LocalDate checkOut,
+        int defaultGuests,
+        String freeCancellationDate,
+        List<RatingCategoryDto> ratingCategories,
+        List<ReviewTagDto> reviewTags,
+        List<ReviewDto> reviews,
+        String neighbourhood,
+        String neighbourhoodBlurb,
+        List<String> cancellationPolicy,
+        List<String> houseRules,
+        List<String> safety,
+        List<NearbyStayDto> nearbyStays
+) {}

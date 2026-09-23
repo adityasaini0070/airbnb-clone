@@ -1,0 +1,33 @@
+.reviews { text-align: center; padding: 48px 0; }
+
+.reviews__score { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 56px; font-weight: 700; }
+.reviews__leaf { font-size: 40px; }
+
+.reviews__heading { font-size: 22px; margin: 16px 0 4px; }
+.reviews__subtitle { color: var(--color-text-secondary); font-size: 14px; max-width: 420px; margin: 0 auto 8px; }
+
+.reviews__categories { text-align: left; max-width: 900px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 48px; }
+@media (max-width: 700px) { .reviews__categories { grid-template-columns: 1fr; } }
+
+.reviews__category { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.reviews__category span:first-child { width: 90px; flex-shrink: 0; }
+.reviews__category strong { width: 24px; text-align: right; flex-shrink: 0; }
+
+.reviews__bar { flex: 1; height: 4px; background: var(--color-border-light); border-radius: 2px; overflow: hidden; }
+.reviews__bar-fill { height: 100%; background: var(--color-text); }
+
+.reviews__tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 40px 0; }
+.reviews__tag { border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 16px; font-size: 13px; font-weight: 600; }
+.reviews__tag em { font-style: normal; color: var(--color-text-secondary); font-weight: 400; }
+
+.reviews__grid { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; margin-bottom: 32px; }
+@media (max-width: 700px) { .reviews__grid { grid-template-columns: 1fr; } }
+
+.review-card__header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.review-card__header img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.review-card__header strong { display: block; font-size: 14px; }
+.review-card__header span { color: var(--color-text-secondary); font-size: 13px; }
+.review-card__meta { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px; }
+.review-card__stars { color: var(--color-text); letter-spacing: 1px; }
+.review-card p { font-size: 15px; line-height: 1.5; margin: 0; }
+.review-card__text--clamped { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }

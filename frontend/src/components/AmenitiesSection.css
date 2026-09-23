@@ -1,0 +1,18 @@
+.amenities-grid { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.amenities-grid li { display: flex; align-items: center; gap: 16px; font-size: 15px; }
+
+.amenities-grid__item--unavailable { color: var(--color-text-secondary); text-decoration: line-through; }
+.amenities-grid__item--unavailable svg { color: var(--color-text-secondary); }
+
+.amenities-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 110; display: flex; align-items: center; justify-content: center; animation: fadeIn 0.15s ease; }
+
+.amenities-modal { background: #fff; width: min(640px, 92vw); max-height: 85vh; border-radius: var(--radius-lg); display: flex; flex-direction: column; animation: slideUp 0.2s ease; }
+.amenities-modal header { display: flex; align-items: center; gap: 16px; padding: 20px; border-bottom: 1px solid var(--color-border-light); }
+.amenities-modal header button { border: none; background: transparent; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.amenities-modal header button:hover { background: #F7F7F7; }
+.amenities-modal header strong { font-size: 16px; }
+
+.amenities-modal__body { padding: 24px; overflow-y: auto; }
+.amenities-modal__body .amenities-grid { grid-template-columns: 1fr; gap: 20px; }
+
+.amenities-modal__note { margin-top: 24px; color: var(--color-text-secondary); font-size: 13px; }

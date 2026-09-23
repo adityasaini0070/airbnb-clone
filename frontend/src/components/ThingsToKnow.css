@@ -1,0 +1,5 @@
+.ttk__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+@media (max-width: 800px) { .ttk__grid { grid-template-columns: 1fr; } }
+.ttk__grid h3 { font-size: 15px; margin: 0 0 12px; }
+.ttk__grid p { font-size: 14px; margin: 0 0 8px; color: var(--color-text); }
+.ttk__grid div a { display: inline-block; margin-top: 4px; }
