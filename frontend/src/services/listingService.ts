@@ -1,6 +1,10 @@
 import { Listing } from '../models/listing';
 
-const API_BASE = '/api';
+// In dev, this stays '/api' and hits the Vite proxy (see vite.config.ts) ->
+// http://localhost:8086. In production, set VITE_API_BASE_URL (e.g. on
+// Vercel) to the deployed backend's full URL, e.g.
+// https://airbnb-clone-gz4j.onrender.com/api
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 // Placeholder imagery — the real listing's photos are proprietary to the
 // reference site and are intentionally not scraped/reproduced here.

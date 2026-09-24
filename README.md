@@ -26,7 +26,7 @@ docker compose up --build
 | `frontend/` | React 18 + Vite + TypeScript SPA — see `frontend/README.md` |
 | `backend/` | Spring Boot 3 REST API — see `backend/README.md` |
 | `docs/architecture.md` | System diagram + layer responsibilities |
-| `docs/PROMPTS.md` | AI workflow log (how this was built with Claude) |
+| `docs/PROMPTS.txt` | AI workflow log (how this was built with Claude) |
 | `docker-compose.yml` | Postgres + backend + frontend, wired together |
 
 ## Fidelity notes
@@ -37,3 +37,28 @@ proprietary and weren't scraped; see `docs/PROMPTS.md` for what to swap in to fi
 match. The frontend has been installed and built successfully in the environment that produced
 it (`npm install && npm run build`, including a full type-check); the backend hasn't, since that
 sandbox has no network access to Maven Central — run `mvn compile` locally first.
+
+## Deploying
+
+**Backend (Render):** New Web Service → Docker → Root Directory `backend` → Dockerfile Path
+`./Dockerfile`. Set env var `SPRING_PROFILES_ACTIVE=dev` (H2, auto-seeded, simplest) or `docker`
++ a Postgres instance (persistent). Free tier spins down on inactivity — first request after idle
+has a cold-start delay.
+
+**Frontend (Vercel or Netlify):** import the repo, set **Root Directory** to `frontend`
+(Vite is auto-detected on both). Add an environment variable:
+
+```
+VITE_API_BASE_URL=https://<your-backend>.onrender.com/api
+```
+
+Currently deployed backend: `https://airbnb-clone-gz4j.onrender.com` → use
+`https://airbnb-clone-gz4j.onrender.com/api` as `VITE_API_BASE_URL`.
+
+Without this variable the frontend falls back to `/api` (relative), which only resolves
+correctly in local dev via the Vite proxy — in production it would 404 and the UI would silently
+fall back to mock data.
+
+Backend CORS already allows `*.vercel.app` and `*.netlify.app` by default (see `app.cors.allowed-
+origins` in `application.yml`); override with the `ALLOWED_ORIGINS` env var once you have a final
+custom domain.

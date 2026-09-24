@@ -9,6 +9,12 @@ spring:
 server:
   port: 8086
 
+app:
+  cors:
+    # Comma-separated origin patterns. Override with the ALLOWED_ORIGINS env
+    # var, e.g. ALLOWED_ORIGINS=https://airbnb-clone.vercel.app
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:*,https://*.vercel.app,https://*.netlify.app}
+
 ---
 spring:
   config:
